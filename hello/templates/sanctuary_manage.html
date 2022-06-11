@@ -1,0 +1,33 @@
+
+{% extends "layout.html" %}
+{% block title %} sanctuary
+{% endblock %}
+{% block content %}
+<h1>Sanctuary Info</h1>
+{% if sanctuary_list %}
+    <table border>
+    <tr>
+        <th>id</th>
+        <th>Donar name</th>
+        <th>Animal name</th>
+        <th>age</th>
+        <th>weight</th>
+        <th>Donar phoneno</th>
+        <th>Donar email</th>
+    </tr>
+    {% for san in sanctuary_list %}
+        <tr>
+            <td>{{san.id}}</td>
+            <td> {{ san.Donar_name }}</td>
+            <td>{{san.Animal_name}}</td>
+            <td>{{san.age}}</td>
+            <td>{{san.weight}}</td>
+            <td>{{san.phoneno_of_donar}}</td>
+            <td>{{san.email_of_donar}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>There are no enrollment yet.</p>
+{% endif %}
+{% endblock %}

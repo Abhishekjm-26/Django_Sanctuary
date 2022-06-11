@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 's.css' %}" />
+
+<html>
+    <body>
+        {% if name %}
+            <h2>Welcome {{name | upper}}</h2>
+        {% else %}
+            <h2>Welcome Anonymous</h2>
+        {% endif %}
+            <h1 style="color: red;">It is now {{ now }}.</h1>
+            <h3>To do:
+                <ul style="list-style-type: square;">
+            {% for t in daylist %}
+            <li>{{t}}</li>
+            {% endfor %}
+            </ul>
+        </h3>        
+    </body>
+</html>
